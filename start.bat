@@ -1,0 +1,1 @@
+call tiddlywiki ./wiki --server 5060 $:/core/save/all text/plain text/html "" "" 127.0.0.1

@@ -1,0 +1,19 @@
+created: 20161023195026497
+headingorder: 050
+modified: 20161212145420852
+tags: [[Посібник користувача Тідлівікі]]
+title: Створення документів
+type: text/vnd.tiddlywiki
+
+!Зміст
+<div class="tc-table-of-contents">
+<<toc-selective-expandable "Створення документів">>
+</div>
+
+* [[http://tiddlywiki.com/#Table-of-Contents Macros]]
+* [[https://goo.gl/4q3454]]
+* Сортування у списку в Змісті за визначеним полем
+* Трансклюзія у списку (к Змісті)
+* 1 HTML+js+img
+* 1 HTML-js+img (static)
+* N HTML+img

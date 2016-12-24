@@ -1,0 +1,63 @@
+created: 20161116082529303
+modified: 20161212145405109
+tags: [[Створення документів]]
+title: Генерування статичних сайтів з ТВ
+type: text/vnd.tiddlywiki
+
+На базі ~TiddlyWiki5 можна генерувати статичне HTML-представлення вікі вмісту, що не потребує ~JavaScript.
+
+ТВ5 надає досить гнучкості процесу генерування статичного HTML-представлення. Нижче наведені два типових сценарії.
+
+!! Перетворення в окремі HTML-файли
+
+Генерування використовує стандартну форму командного рядка ТВ:
+
+```
+tiddlywiki <назва_вікі> <параметри_команди>
+
+```
+
+Наступні параметри команди використовуються для генерування статичної версії сайту ~TiddlyWiki5:
+
+```
+--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html static text/plain
+--rendertiddler $:/core/templates/static.template.html static.html text/plain
+--rendertiddler $:/core/templates/static.template.css static/static.css text/plain
+```
+
+# Перша команда `RenderTiddlers` генерує HTML-представлення окремих тідлерів, 
+# друга команда `RenderTiddler` зберігає статичний варіант [[DefaultTiddlers|http://tiddlywiki.com/#Preserving%20open%20tiddlers%20at%20startup]],
+# а крайня команда `RenderTiddler` зберігає таблицю стилів у файлі `static.css`. 
+
+Всі файли поміщаються у теці виведення вікі `output`.
+
+В результаті HTML-представлення кожного тідлера (наприклад, під назвою `HelloThere`), пов'язане з `DefaultTiddlers`, має URL-адресу типу  `/static/HelloThere.html`.
+
+!! Перетворення в одиночний HTML-файл
+
+Крім того, можна згенерувати одиночний HTML-файл, що містить статичні представлення тідлерів і використовує стандартні HTML-посилання типу якір для перемикання між ними.
+
+У прикладі побудований одиночний файл `alltiddlers.html` з допомогою наступних командних параметрів:
+
+```
+--rendertiddler $:/core/templates/alltiddlers.template.html alltiddlers.html text/plain
+```
+
+!! Командні скрипти
+
+Для першого і другого сценаріїв у фолдері `C:\Users\Admin` створені командні скрипти, відповідно: `kdgenm.bat` і `kdgen1.bat`.
+
+Назва вікі передається до скрипта у вигляді параметра, тому запуск кожної команди `tiddlywiki` здійснюється з допомогою оператора `call`:
+
+```
+call tiddlywiki %1 <параметри_команди>
+```
+
+Отже для запуску скрипта для конкретної вікі, скажімо `kropyvadoc`, ведіть таку команду:
+
+```
+kdgenm kropyvadoc
+
+```
+
+

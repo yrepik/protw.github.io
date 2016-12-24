@@ -1,0 +1,24 @@
+created: 20161120142753120
+modified: 20161212121039973
+tags: Таблиці
+title: Ширина колонки таблиці
+type: text/vnd.tiddlywiki
+
+Для задання ширини колонки таблиці використовуйте інструменти стилю `display:block;width:<ширина>;`. Наприклад:
+
+```
+| @@display:block;width:4em; 4 од. @@ | @@display:block;width:5em; 5 од. @@ | @@display:block;width:6em; 6 од. @@ |
+|foo |bar |baz |
+|mumble |frotz |gronk |
+```
+
+Що матиме такий вигляд:
+
+| @@display:block;width:4em; 4 од. @@ | @@display:block;width:5em; 5 од. @@ | @@display:block;width:6em; 6 од. @@ |
+|foo |bar |baz |
+|mumble |frotz |gronk |
+
+У разі, якщо таблиця завелика, то краще застосувати HTML-код.
+
+!! Посилання
+* [[Форум ТВ|https://groups.google.com/forum/#!topic/TiddlyWiki/xFGvvbx8NZM]]

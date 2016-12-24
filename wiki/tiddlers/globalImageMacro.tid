@@ -1,0 +1,14 @@
+created: 20161015193357190
+headingorder: 020
+modified: 20161213185625006
+tags: $:/tags/Macro картинки [[Глобальний шлях до сховища картинок]] FAQ
+title: globalImageMacro
+type: text/vnd.tiddlywiki
+
+\define imageFullPath(image, tooltip, path, width, class)
+[img width="$width$" class="$class$" [$tooltip$|$path$$image$]]
+\end
+
+\define iLink( image, width, tooltip:"image", pathConfig:"globalImagePath", class)
+<$macrocall $name="imageFullPath" path={{$pathConfig$}} image="$image$" tooltip="$tooltip$" class="$class$" width="$width$"/>
+\end

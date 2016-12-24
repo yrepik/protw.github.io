@@ -1,0 +1,63 @@
+created: 20161023151051053
+creator: oleghbond
+headingorder: 020
+modified: 20161214153141486
+modifier: oleghbond
+tags: [[Встановлення ТВ]] FAQ
+title: ТВ на node.js і Windows
+type: text/vnd.tiddlywiki
+
+Node.js — платформа з відкритим кодом для виконання високопродуктивних мережевих застосунків, написаних мовою ~JavaScript. Засновником платформи є Раян Дал (Ryan Dahl). Платформа node.js перетворила мову ~JavaScript, що в основному використовувалась в браузерах на мову загального використання з великою спільнотою розробників.
+
+!!Встановлення Node.js
+
+Для завантаження дистрибутива Node.js перейдіть за [[посиланням|https://nodejs.org/en/download/]] і скачайте потрібну вам дистрибуцію з урахуванням операційної системи і розрядності процесора вашого комп'ютера, на якому встановлюватиметься програмне забезпечення.
+
+В моєму випадку я скачав `Windows Installer (.msi)`. В результаті установки на Віндовз 10 встановлено 2 застосунки:
+
+* Node.js
+* Node.js command prompt (командна консоль)
+
+Перевіряємо результат установки перевіркою версії `node` і `npm` у командній консолі:
+
+[img[command-prompt-test.png]]
+
+!!Встановлення Тідлівікі
+
+Далі встановлюємо ТВ:
+
+```
+npm install -g tiddlywiki
+```
+Перевіряємо версію ТВ:
+
+```
+tiddlywiki --version
+```
+У відповідь отримаємо щось на кшталт `5.1.13`.
+
+Робимо такі заключні кроки:
+
+* `tiddlywiki kropyvadoc --init server` створюємо теку для нової вікі `kropyvadoc` (це ім'я заміняєте на ім'я власної вікі), що містить необхідні серверні компоненти;
+* `tiddlywiki kropyvadoc --server 8080 $:/core/save/all text/plain text/html "" "" 127.0.0.1` стартуємо нову вікі `kropyvadoc`;
+* відвідуємо адресу `http://127.0.0.1:8080/` у бравзері;
+* створюємо і редагуємо нові статті (тідлери).
+
+!!Розташування файлів
+
+Для роботи з вікі може виникати потреба відвідувати окремі її компоненти. У варіанті Віндовз 10 маємо такі теки розташування файлів:
+
+* `C:\Program Files\nodejs` - установлені файли `Node.js\`;
+* `C:\Users\Admin\AppData\Roaming\npm\` - батч-файли `tiddlywiki` (під Лінукс) і `tiddlywiki.cmd` (під Віндовз) для запуску ТВ;
+* `C:\Users\Admin\AppData\Roaming\npm\node_modules\tiddlywiki\` - установлені файли ТВ;
+* `C:\Users\Admin\kropyvadoc\` - файли нової вікі `kropyvadoc`.
+
+@@float:right; {{$:/core/images/save-button}}@@
+
+Увага! Час від часу зберігайте вашу вікі як локальний файл за допомогою кнопки
+
+!!Посилання
+
+* [[Node.js, Вікіпедія|https://uk.wikipedia.org/wiki/Node.js]]
+* [[Дистрибутив Node.js|https://nodejs.org/en/download/]]
+* [[Встановлення TiddlyWiki на Node.js|http://tiddlywiki.com/static/Installing%2520TiddlyWiki%2520on%2520Node.js.html]]
