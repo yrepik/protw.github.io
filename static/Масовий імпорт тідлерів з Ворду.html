@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Масовий імпорт тідлерів з Ворду: Про Тідлівікі — Посібник для користування Тідлівікі 5</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-%D0%A1%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%96%D0%B2"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Масовий імпорт тідлерів з Ворду
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 12th December 2016 at 5:04pm
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Створення документів
+</button>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
+
+</span>
+</div>
+</div>
+<div class="tc-tiddler-body tc-reveal"><p>Ця стаття описує порядок дій при перенесенні великого структурованого документу з текстового редактору (наприклад, Ворд) у ТВ із збереженням структури. Порядок недосконалий, але дає певний результат.</p><ul><li>Зберегти вордівський документ як текстовий. <blockquote><p>Далі працюйте з текстом за допомогою текстового редактора з регулярними виразами типу <a class="tc-tiddlylink-external" href="https://notepad-plus-plus.org" rel="noopener noreferrer" target="_blank">Notepad++</a>.</p></blockquote></li><li>Знаки закінчення абзаців (<code>&lt;LF&gt;</code> <code>&lt;CR&gt;</code> або <code>\r\n</code> в термінах регулярних виразів), які знаходяться між заголовками, замініть на текстовий рядок <code>&quot;\n\n&quot;</code>. Тобто суміжні абзаци між сусідніми заголовками об'єднуються в один абзац з такого:<blockquote><p><code>Заголовок1&lt;LF&gt;&lt;CR&gt;
+Абзац1&lt;LF&gt;&lt;CR&gt;
+Абзац2&lt;LF&gt;&lt;CR&gt; 
+...
+АбзацN&lt;LF&gt;&lt;CR&gt;
+Заголовок2&lt;LF&gt;&lt;CR&gt;</code></p></blockquote></li><li>десь у такий:<blockquote><p><code>Заголовок1&lt;LF&gt;&lt;CR&gt;
+Абзац1\n\nАбзац2\n\n ... АбзацN&lt;LF&gt;&lt;CR&gt;
+Заголовок2&lt;LF&gt;&lt;CR&gt;</code></p></blockquote></li><li>Далі з кожної послідовної пари абзаців <strong><code>заголовок</code></strong> <code>&lt;LF&gt;</code> <code>&lt;CR&gt;</code> <strong><code>текст</code></strong> утворіть один абзац, розділений знаком табуляції (<code>&lt;TAB&gt;</code> або <code>\t</code> в термінах регулярних виразів), а саме: <strong><code>заголовок</code></strong> <code>&lt;TAB&gt;</code> <strong><code>текст</code></strong>, <blockquote><p><code>Заголовок1&lt;TAB&gt;Абзац1\n\nАбзац2\n\n ... АбзацN&lt;LF&gt;&lt;CR&gt;</code></p></blockquote></li><li>Імпортуйте утворений текст у редактор таблиць типу Ексел. Таким чином утворіть таблицю з двох колонок: <strong>Заголовок</strong> і <strong>Текст</strong>. Поставте заголовки цих колонок: <code>title</code> і <code>text</code>, відповідно.</li><li>Додайте і заповніть у таблиці ще дві колонки <code>tags</code> і <code>headingorder</code>.<ul><li>До поля <code>tags</code> занесіть назву заголовка (контейнера) верхнього рівня, до якого належить поточний заголовок. Для заголовків найвищого рівня визначте назву кореневого контейнера, наприклад <strong>Корінь документа</strong>. Назви, що містять пробіли, загорніть у подвійні квадратні дужки. Але для регулярності зробіть це для всіх назв. Наприклад, <code>[[Корінь документа]]</code>. </li><li>До поля <code>headingorder</code> занесіть індекс впорядкування підрозділів у конкретному розділі. Так, наприклад, для підзаголовків кожного конкретного контейнера можна внести такий ряд: <strong>010</strong>, <strong>020</strong>, <strong>030</strong> тощо.</li><li>У якості прикладу це виглядатиме так:</li></ul></li></ul><table><thead><tr class="evenRow"><td align="center">title</td><td align="center">tags</td><td align="center">headingorder</td></tr></thead><tbody><tr class="oddRow"><td align="left">Заголовок1</td><td align="left"><code>[[Корінь документа]]</code></td><td align="center">010</td></tr><tr class="evenRow"><td align="left">Заголовок1.1</td><td align="left"><code>[[Заголовок1]]</code></td><td align="center">010</td></tr><tr class="oddRow"><td align="left">Заголовок1.2</td><td align="left"><code>[[Заголовок1]]</code></td><td align="center">020</td></tr><tr class="evenRow"><td align="left">Заголовок1.2.1</td><td align="left"><code>[[Заголовок1.2]]</code></td><td align="center">010</td></tr><tr class="oddRow"><td align="left">Заголовок1.2.2</td><td align="left"><code>[[Заголовок1.2]]</code></td><td align="center">020</td></tr><tr class="evenRow"><td align="left">Заголовок2</td><td align="center"><code>[[Корінь документа]]</code></td><td align="center">020</td></tr></tbody></table><ul><li>Отриману таблицю з чотирьох колонок конвертуйте в JSON формат. Це можна зробити, наприклад, з допомогою безкоштовного сервиса <a class="tc-tiddlylink-external" href="http://shancarter.github.io/mr-data-converter/" rel="noopener noreferrer" target="_blank">Mr. Data Converter</a>.</li></ul><p>У підсумку отримаєте результат на кшталт:</p><pre><code>[
+	{
+		&quot;text&quot;: &quot;Так, наприклад, вносимо\n\nтакий ряд: \&quot;010\&quot;, \&quot;020\&quot;, \&quot;030\&quot; тощо.&quot;,
+		&quot;title&quot;: &quot;КЕ АРМ КУТ-Р&quot;,
+		&quot;tags&quot;: &quot;[[Корінь документа]]&quot;,
+		&quot;headingorder&quot;: &quot;010&quot;
+	},
+	{
+		&quot;text&quot;: &quot;Абзац1\n\nАбзац2&quot;,
+		&quot;title&quot;: &quot;Опис і робота АРМ&quot;,
+		&quot;tags&quot;: &quot;[[КЕ АРМ КУТ-Р]]&quot;,
+		&quot;headingorder&quot;: &quot;020&quot;
+	}
+]</code></pre><ul><li>Зрештою збережіть конвертований текст у файлі з розширенням <code>.json</code>.</li><li>Імпортуйте збережений файл до ТВ з допомогою <code>Tools</code>/<code>Import</code> (<code>Інструменти</code>/<code>Імпорт</code>).</li><li>Імпорт завершений.<blockquote><p><em><strong>УВАГА!</strong></em> Деякі важливі речі, які треба контролювати під час конвертування у JSON формат:<ul><li>Подвійним лапкам <code>&quot;</code> усередині текста мають передувати зворотний слеш <code>\&quot;</code>.</li><li>Суто числові поля у JSON форматі мають бути загорнуті у подвійні лапки, наприклад:  <code>&quot;headingorder&quot;: &quot;020&quot;</code>.</li><li>Заключна квадратна дужка <code>]</code> має бути останнім символом у JSON-файлі - <strong>жодних пробілів, пунктуацій або будь-чого!</strong></li></ul></p></blockquote></li></ul><p>На завершення імпорту створіть <a class="tc-tiddlylink tc-tiddlylink-missing" href="Таблиці змісту.html">таблицю змісту</a> для імпортованого документу:</p><ul><li>Створіть новий тідлер</li><li>Вставте макрос таблиці змісту:<ul><li><code>&lt;&lt;toc &quot;Корінь документа&quot; sort[headingorder]&gt;&gt;</code></li></ul></li></ul><h2 class="">Див. також</h2><ul><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="Масовий імпорт зовнішніх зображень.html">Масовий імпорт зовнішніх зображень</a></li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="Таблиці змісту.html">Таблиці змісту</a></li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Хостинг Тідлівікі: Про Тідлівікі — Посібник для користування Тідлівікі 5</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-%D0%92%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%A2%D0%92"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Хостинг Тідлівікі
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 16th December 2016 at 12:01am
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Встановлення ТВ
+</button>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
+
+</span>
+</div>
+</div>
+<div class="tc-tiddler-body tc-reveal"><p>Від технічних можливостей хостинга залежить, який саме варіант ТВ можна розмістити на ньому:</p><ol><li>статичний HTML</li><li>HTML+JS</li><li>Node.js</li><li>TW5 на Github Pages</li></ol><p>Нижче у таблиці надані апробовані варіанти хостингу:</p><table><thead><tr class="evenRow"><td align="center">Хостинг</td><td align="center">Варіант ТВ</td><td align="center">Примітки</td></tr></thead><tbody><tr class="oddRow"><td align="left">Google Drive + HTML Viewer extension</td><td align="center">1</td><td align="left">(-) Нема доменного імені, незручний запуск, (+) є контроль доступу</td></tr><tr class="evenRow"><td align="left">Безкоштовний хостинг на базі DropBox <a class="tc-tiddlylink-external" href="https://updog.co/" rel="noopener noreferrer" target="_blank">updog.co</a></td><td align="center">2</td><td align="left">(-) повністю відкритий, (+) домен</td></tr><tr class="oddRow"><td align="left">На базі локально встановленого Node.js, синхронізація між користувачами з допомогою <code>git</code> (VCS) через платний сервер bitbucket.org</td><td align="center">3</td><td align="left">(-) відносно складне встановлення і підтримка оновлень документу, нема зовнішньої точки доступу (+) контроль версій і авторства, генерування статичних HTML</td></tr><tr class="evenRow"><td align="left">Безкоштовний хостинг TW5 на Github pages (детальна інструкція <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Автопублікація Tiddlywiki на Github Pages.html">тут</a>)</td><td align="center">4</td><td align="left">(-) досить нетрадиційний, але все колись було дуже нетрадиційним, важкуватий для розуміння запуск, відсутні вбудовані WYSIWYG інструменти, авторизація це окреме питання, (+) 1 тідлер - 1 файл, багатокористувацька відкрита вікі з відстежуванням версій, створення іншої вікі робиться через створення гілки з перейменуванням</td></tr></tbody></table><p>Окремим, але нерозривним питанням завжди постає контроль доступу до ресурсу. Сам ТВ не надає засобів контролю цих питань. Але для конкретних хостів можна знайти відкриті інструменти автентифікації. Так, зокрема, для GitHub Pages це:</p><ol><li><a class="tc-tiddlylink-external" href="https://github.com/benbalter/jekyll-auth" rel="noopener noreferrer" target="_blank">Jekyll Auth</a></li><li><a class="tc-tiddlylink-external" href="http://kinlane.com/2013/10/15/securing-site-that-runs-on-github-pages-with-json-backend-in-private-repository/" rel="noopener noreferrer" target="_blank">Securing Site That Runs on Github Pages With JSON Backend In Private Repository</a></li></ol><p>З обговоренням питань автентифікації для GitHub Pages можна ознайомитись на <a class="tc-tiddlylink-external" href="http://stackoverflow.com/questions/10748082/private-pages-for-a-private-github-repo" rel="noopener noreferrer" target="_blank">stackoverflow</a>.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Вирішення питання задовгих імен файлів: Про Тідлівікі — Посібник для користування Тідлівікі 5</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-%D0%93%D0%B5%D0%BD%D0%B5%D1%80%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%87%D0%BD%D0%B8%D1%85%20%D1%81%D0%B0%D0%B9%D1%82%D1%96%D0%B2%20%D0%B7%20%D0%A2%D0%92"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Вирішення питання задовгих імен файлів
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 12th December 2016 at 4:54pm
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Генерування статичних сайтів з ТВ
+</button>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
+
+</span>
+</div>
+</div>
+<div class="tc-tiddler-body tc-reveal"><p>Під час генерування статичного сайту з ТВ версії 5.1.13 у імена окремих HTML-файлів  створюються з назв (поле <code>title</code>) тідлерів з використанням %-кодування, в результаті чого довжина імені збільшується у 6 разів.</p><p>Наприклад тідлер <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Абзаци.html">Абзаци</a> перетворюється у </p><pre><code>#%D0%90%D0%B1%D0%B7%D0%B0%D1%86%D0%B8.html</code></pre><p>У багатьох операційних системах встановлено типове обмеження на повну довжину імені файлу, тобто <code>шлях + ім'я + розширення</code> на рівні 255. </p><p>У випадку, якщо під час генерування трапляється статичний HTML-файл з повною довжиною імені більшою за 255, то процес побудови статичного сайту аварійно зупиняється.</p><p>Це питання обговорювалось з одним з розробників ТВ5 Джеремі Растоном (див. <a class="tc-tiddlylink-external" href="https://groups.google.com/forum/#!msg/tiddlywiki/RwDPjGzaqQ0/kfSisfqaAQAJ" rel="noopener noreferrer" target="_blank">тут</a>).</p><p>За результатами обговорення <code>dvalex</code> і <code>oleghbond</code> запропоновано заміну двох рядків коду ТВ5 версії 5.1.13, де було <strong>вилучено</strong> кодування назв тідлерів з допомогою функції  <code>encodeURIComponent</code>:</p><ul><li><strong>core\modules\widgets\link.js: 86</strong></li></ul><pre class="js hljs"><code><span class="hljs-comment">/*
+wikiLinkText = wikiLinkText.replace("$uri_doubleencoded$",encodeURIComponent(encodeURIComponent(this.to)));  // ORIGINAL 
+*/</span>
+wikiLinkText = wikiLinkText.replace(<span class="hljs-string">"$uri_doubleencoded$"</span>,<span class="hljs-keyword">this</span>.to); <span class="hljs-comment">// CHANGED</span></code></pre><ul><li><strong>core\modules\commands\rendertiddlers.js: 60</strong></li></ul><pre class="js hljs"><code><span class="hljs-comment">/*
+var finalPath = exportPath || path.resolve(pathname,encodeURIComponent(title) + extension);  // ORIGINAL 
+*/</span>
+<span class="hljs-keyword">var</span> finalPath = exportPath || path.resolve(pathname,title + extension); <span class="hljs-comment">// CHANGED</span></code></pre><p>aa
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
