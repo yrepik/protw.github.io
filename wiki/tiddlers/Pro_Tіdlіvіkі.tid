@@ -1,5 +1,5 @@
 created: 20161226113935382
-modified: 20161226115649609
+modified: 20161226130454095
 pub-author-date: 2016
 pub-authors: oleghbond
 pub-by: protw
@@ -8,13 +8,14 @@ pub-desc: Цей посібник користувача не є докумен�
 pub-desc-short: Посібник користувача Тідлівікі 5+
 pub-img: tw5-logo.png
 pub-lang: ukr
+pub-link: https://protw.github.io/tw5
 pub-title: Про Тідлівікі
 pub-trans-by: 
 tags: TW5
 title: Про Тідлівікі
 type: text/vnd.tiddlywiki
 
-@@float:left;margin-right:10pt; <a href="https://protw.github.io/rder-uk/" target="_blank"><$image source={{!!pub-img}} tooltip={{!!pub-title}}/></a>@@
+@@float:left;margin-right:10pt; <a href={{!!pub-link}} target="_blank"><$image source={{!!pub-img}} tooltip={{!!pub-title}}/></a>@@
 
 !! {{!!pub-title}}. {{!!pub-authors}}, {{!!pub-author-date}}
 

@@ -1,5 +1,5 @@
 created: 20161225201332096
-modified: 20161226113826748
+modified: 20161226130751379
 pub-author-date: 1985
 pub-authors: UNEP
 pub-by: protw
@@ -8,13 +8,14 @@ pub-desc: Ця брошура вперше опублікована у 1985 ро
 pub-desc-short: Публікація НКДАР ООН щодо дії іонізуючого випромінення на людину
 pub-img: rder-RU.gif
 pub-lang: ukr
+pub-link: https://protw.github.io/rder-uk/
 pub-title: Радіація: дози, ефекти, ризики
 pub-trans-by: oleghbond
 tags: radiation
 title: Радіація: дози, ефекти, ризики
 type: text/vnd.tiddlywiki
 
-@@float:left;margin-right:10pt; <a href="https://protw.github.io/rder-uk/" target="_blank"><$image source={{!!pub-img}} tooltip={{!!pub-title}}/></a>@@
+@@float:left;margin-right:10pt; <a href={{!!pub-link}} target="_blank"><$image source={{!!pub-img}} tooltip={{!!pub-title}}/></a>@@
 
 !! {{!!pub-title}}. {{!!pub-authors}}, {{!!pub-author-date}}
 
