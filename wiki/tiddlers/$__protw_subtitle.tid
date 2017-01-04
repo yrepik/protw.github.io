@@ -1,0 +1,16 @@
+created: 20170104195303693
+modified: 20170104205847753
+tags: 
+title: $:/protw/subtitle
+type: text/vnd.tiddlywiki
+
+\define res_link(link, tooltip, image)
+<a href="$link$" title="$tooltip$"><div style="margin:4px 4px; text-align:center; float:left;">[img height=28px [$image$]]</div></a>
+\end
+
+Самоплатформа Tiddlywiki - Створювати смисли<br/>
+Tiddlywiki selfplatform - Making senses<br/>
+<<res_link "https://protw.github.io" "Статті, ресурси" "protw-logo.svg">>
+<<res_link "https://facebook.com/groups/protw5" "Оголошення, анонси" "facebook-logo.svg">>
+<<res_link "https://groups.io/g/protw" "Обговорення, дискусії" "groups.io-logo.svg">>
+<div style="clear:both;"></div>
