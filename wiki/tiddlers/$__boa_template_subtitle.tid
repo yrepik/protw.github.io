@@ -1,7 +1,7 @@
 created: 20170104195303693
-modified: 20170104205847753
+modified: 20171118074609007
 tags: 
-title: $:/protw/subtitle
+title: $:/boa/template/subtitle
 type: text/vnd.tiddlywiki
 
 \define res_link(link, tooltip, image)
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 
 Самоплатформа Tiddlywiki - Створювати смисли<br/>
 Tiddlywiki selfplatform - Making senses<br/>
-<<res_link "https://protw.github.io" "Статті, ресурси" "protw-logo.svg">>
-<<res_link "https://facebook.com/groups/protw5" "Оголошення, анонси" "facebook-logo.svg">>
-<<res_link "https://groups.io/g/protw" "Обговорення, дискусії" "groups.io-logo.svg">>
+<<res_link "https://protw.github.io" "Статті, ресурси" "$:/boa/img/protw-logo.svg">>
+<<res_link "https://facebook.com/groups/protw5" "Оголошення, анонси" "$:/boa/img/facebook-logo.svg">>
+<<res_link "https://groups.io/g/protw" "Обговорення, дискусії" "$:/boa/img/groups.io-logo.svg">>
 <div style="clear:both;"></div>

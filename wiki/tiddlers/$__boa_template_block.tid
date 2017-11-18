@@ -1,0 +1,14 @@
+created: 20171117182854066
+modified: 20171118095800625
+tags: 
+title: $:/boa/template/block
+type: text/vnd.tiddlywiki
+
+<div style="display:inline-block;width:20%;margin:10pt;"> 
+<div style="height:160px;">
+<a href={{!!pub-link}} target="_blank"><$image source={{!!pub-img}} tooltip={{!!pub-title}}/></a>
+</div>
+<div style="height:40px;overflow:hidden;text-overflow:ellipsis;font-size:small;">
+<$link to={{!!title}}><span style="text-transform:uppercase;">{{!!pub-title}}</span>. {{!!pub-authors}}, {{!!pub-author-date}}</$link>
+</div>
+</div>

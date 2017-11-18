@@ -1,11 +1,11 @@
-created: 20161226120409422
-modified: 20161226131627020
+created: 20171117175445741
+modified: 20171118102856741
 tags: 
 title: Портфоліо
 type: text/vnd.tiddlywiki
 
-{{Про Тідлівікі||$:/protw/template/doc-ref}}
+<div style="text-align:right;"><span style="background-color:#F0F0F0;padding:3px;">[[Реферати публікацій|Реферати]]</span></div>
+<$list filter="[tag[Портфоліо]sort[created]]">
+{{!!title||$:/boa/template/block}}
+</$list>
 
----
-
-{{Радіація: дози, ефекти, ризики||$:/protw/template/doc-ref}}

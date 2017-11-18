@@ -1,6 +1,6 @@
 created: 20161210185937462
-modified: 20170104205901385
+modified: 20171118074628395
 title: $:/SiteSubtitle
 type: text/vnd.tiddlywiki
 
-{{$:/protw/subtitle}}
+{{$:/boa/template/subtitle}}
