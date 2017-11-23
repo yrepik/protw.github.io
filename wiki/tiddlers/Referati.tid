@@ -1,10 +1,10 @@
 created: 20161226120409422
-modified: 20171118074316763
+modified: 20171123190449068
 tags: 
 title: Реферати
 type: text/vnd.tiddlywiki
 
-<$list filter="[tag[Портфоліо]]">
+<$list filter="[tag[Портфоліо]sort[created]]">
 {{!!title||$:/boa/template/doc-ref}}
 </$list>
 
