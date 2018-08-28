@@ -1,5 +1,5 @@
 created: 20170104195303693
-modified: 20171118074609007
+modified: 20180828070844303
 tags: 
 title: $:/boa/template/subtitle
 type: text/vnd.tiddlywiki
@@ -12,5 +12,6 @@ type: text/vnd.tiddlywiki
 Tiddlywiki selfplatform - Making senses<br/>
 <<res_link "https://protw.github.io" "Статті, ресурси" "$:/boa/img/protw-logo.svg">>
 <<res_link "https://facebook.com/groups/protw5" "Оголошення, анонси" "$:/boa/img/facebook-logo.svg">>
-<<res_link "https://groups.io/g/protw" "Обговорення, дискусії" "$:/boa/img/groups.io-logo.svg">>
+<<res_link "https://github.com/protw/protw.github.io/issues/new" "Зворотний зв'язок з видавництвом PROTW" "$:/boa/img/github-logo.svg">>
+
 <div style="clear:both;"></div>
