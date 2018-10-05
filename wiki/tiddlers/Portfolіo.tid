@@ -1,12 +1,12 @@
 created: 20171117175445741
-modified: 20181005063910187
+modified: 20181005080739666
 tags: 
 title: Портфоліо
 type: text/vnd.tiddlywiki
 
-<div style="text-align:right;"><span style="background-color:#F0F0F0;padding:3px;">[[Реферати публікацій|Реферати]]</span></div>
+<div style="text-align:right;">{{Реферати||$:/core/ui/TagTemplate}}</div>
 
-<$list filter="[tag[Портфоліо]sort[created]]">
+<$list filter="[!has[draft.of]tag[Портфоліо]sort[pub-index]]">
 {{!!title||$:/boa/template/block}}
 </$list>
 
